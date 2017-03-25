@@ -23,7 +23,7 @@ public class _GameControler : MonoBehaviour
 
 
 
-            var go = Instantiate(Block, new Vector3(8.38f, -3.02f, 0.5f), Quaternion.identity);
+            var go = Instantiate(Block, new Vector3(8.38f, -2.52f, 0.5f), Quaternion.identity);
 
 
 

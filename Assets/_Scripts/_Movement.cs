@@ -43,10 +43,19 @@ public class _Movement : MonoBehaviour {
 
         if (other.gameObject.CompareTag("Przeszkoda"))
         {
-			
             Destroy(other.GetComponent<Rigidbody2D>());
 			hpVal = hpVal - 10;
 			hpslider.value = hpVal;
+        }
+
+        if (other.gameObject.CompareTag("Przeszkoda2"))
+        {
+            //other.GetComponent<BlockMove>().Kill();
+            other.GetComponent<Animator>().Play("przeszkodaonhit");
+            Debug.Log("Hit!!");
+            Destroy(other.GetComponent<Rigidbody2D>());
+            hpVal = hpVal - 10;
+            hpslider.value = hpVal;
         }
     }
 		
