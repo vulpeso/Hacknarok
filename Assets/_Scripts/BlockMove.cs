@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlockMove : MonoBehaviour {
 
     
-    public float _speed = 0.5f;
+    public float _speed = 4.8f;
     // Use this for initialization
     void Start () {
     }
