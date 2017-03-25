@@ -2,14 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.UI;
+
 public class _Movement : MonoBehaviour {
     private Rigidbody2D rb2d;
     public Rigidbody2D _ground;
     public int _Jump_Force = 1000;
     public int _Can_Jump = 1;
+	private int hpVal;
+
+	public Text hpText;
+	public Slider hpslider;
+
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D> ();
+		hpVal = 100;
+		hpslider.minValue = 0;
+		hpslider.maxValue = 100;
+		hpslider.value = hpVal;
         
     }
 
@@ -31,9 +43,14 @@ public class _Movement : MonoBehaviour {
 
         if (other.gameObject.CompareTag("Przeszkoda"))
         {
-
-            //   other.gameObject.SetActive(false);
+			
             Destroy(other.GetComponent<Rigidbody2D>());
+			hpVal = hpVal - 10;
+			hpslider.value = hpVal;
         }
     }
+		
+
+
+
 }
