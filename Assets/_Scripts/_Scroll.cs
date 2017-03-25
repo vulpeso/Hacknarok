@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class _Scroll : MonoBehaviour {
 
-    public float _speed = 4.8f;
+    public float _speed = 1f;
     public GameObject[] pisos;
     // Use this for initialization
     void Start () {

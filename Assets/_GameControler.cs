@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class _GameControler : MonoBehaviour
 {
-    public int _time = 300;
-    public GameObject Block;
+    public float _time = 300;
+    public GameObject Block1;
+    public GameObject Block2;
+    private List<BlockMove> _Blocks = new List<BlockMove>();
     public int i = 1;
     // Use this for initialization
     void Start()
@@ -20,15 +22,12 @@ public class _GameControler : MonoBehaviour
         if (i > _time)
         {
             i = 0;
-
-
-
-            var go = Instantiate(Block, new Vector3(8.38f, -2.52f, 0.5f), Quaternion.identity);
-
-
-
-
+            _time = Random.Range(50f, 400f);
+            var go = Instantiate((((int)_time)%2==0 ? Block1 : Block2), new Vector3(9.5f, -2.5f, 0.5f), Quaternion.identity);
         }
+
         i++;
+
+
     }
 }

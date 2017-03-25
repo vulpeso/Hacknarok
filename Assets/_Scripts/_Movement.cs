@@ -36,7 +36,7 @@ public class _Movement : MonoBehaviour {
         }
         if (rb2d.position[1] < -1.8)
             _Can_Jump = 1;
-        Debug.Log(rb2d.position[1]);
+        //Debug.Log(rb2d.position[1]);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
