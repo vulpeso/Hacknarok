@@ -22,8 +22,18 @@ public class _Movement : MonoBehaviour {
             rb2d.AddForce(jump_force);
             _Can_Jump -= 1;
         }
-        if (rb2d.position[1] < -3.2)
+        if (rb2d.position[1] < -1.8)
             _Can_Jump = 1;
         Debug.Log(rb2d.position[1]);
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.gameObject.CompareTag("Przeszkoda"))
+        {
+
+            //   other.gameObject.SetActive(false);
+            Destroy(other.GetComponent<Rigidbody2D>());
+        }
     }
+}
